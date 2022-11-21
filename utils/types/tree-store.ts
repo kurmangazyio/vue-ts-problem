@@ -1,8 +1,9 @@
+import { TreeItem } from './tree-item'
 
-export interface ITreeStore<T> {
-    getAll (): Array<T>;
-    getItem (id: string | number): T | undefined;
-    getChildren? (id: string | number): Array<T>;
-    getAllChildren? (id: string | number): Array<T>;
-    getAllParents? (id: string | number): Array<T>;
+export interface ITreeStore {
+    getAll (): Array<TreeItem>;
+    getItem (id: string | number): TreeItem | undefined;
+    getChildren? (id: string | number): Array<TreeItem>;
+    getAllChildren? (id: string | number): Array<TreeItem>;
+    getAllParents? (id: string | number): Array<TreeItem>;
 }
