@@ -1,0 +1,12 @@
+{
+  "name": "Problem Solution",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Kurmangazy Kongratbayev",
+  "scripts": {
+    "build": "npx tsc && node main.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3"
+  }
+}
