@@ -36,9 +36,17 @@ export class TreeStore implements ITreeStore {
         })
     }
 
-    public getAllParents (id: string | number): Array<TreeItem> {
+    public getAllParents (id: string | number, result: Array<TreeItem> = []): Array<TreeItem> {
         const item = this.getItem(id)
-        return []
+        if (!item) return result
+        const parent = this.getItem(item.parent)
+        
+        if(parent) {
+            result.push(parent)
+            return this.getAllParents(parent.id, result)
+        }
+
+        return result
     }
 }
 

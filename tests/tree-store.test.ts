@@ -59,4 +59,15 @@ describe('TreeStore Class', () => {
 
         expect(compareObjects<any, any>(result, expected)).toBe(true)
     })
+
+    test('* Check getAllParents() method => testing id = 7', () => {
+        const result = ts.getAllParents(7)
+        const expected = [
+            {"id": 4, "parent": 2, "type": "test" },
+            {"id": 2, "parent": 1, "type": "test" },
+            {"id": 1, "parent": "root"}
+        ]
+
+        expect(compareObjects<any, any>(result, expected)).toBe(true)
+    })
 })
